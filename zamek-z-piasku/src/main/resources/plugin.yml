@@ -1,0 +1,19 @@
+name: ZamekZPiasku
+version: '${project.version}'
+main: pl.digmc.zamekzpiasku.ZamekPlugin
+api-version: '1.21'
+author: DIGMC
+description: >
+  Event "Zamek z Piasku" - cykliczna budowla z bossbarem odliczajacym czas,
+  w ktorej zabojstwa graczy dają bonusowe punkty.
+
+commands:
+  zamek:
+    description: Zarzadzanie eventem Zamek z Piasku
+    usage: /<command> <start|stop|build|reload|status>
+    permission: zamek.admin
+
+permissions:
+  zamek.admin:
+    description: Pozwala zarzadzac eventem Zamek z Piasku
+    default: op

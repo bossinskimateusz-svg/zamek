@@ -1,0 +1,69 @@
+# ================================================
+#   ZAMEK Z PIASKU - konfiguracja eventu
+# ================================================
+
+event:
+  # Czy event ma startowac sam co jakis czas
+  auto-start: true
+  # Co ile minut event startuje automatycznie (jesli auto-start: true)
+  interval-minutes: 30
+  # Ile sekund trwa sam event (walka wewnatrz zamku)
+  duration-seconds: 90
+  # Ile sekund trwa zapowiedz/odliczanie przed wybudowaniem zamku
+  countdown-before-start: 10
+  # Minimalna liczba graczy online, zeby event mogl wystartowac automatycznie
+  min-players: 2
+  # Czy po zakonczeniu eventu budowla ma zostac usunieta (przywrocenie terenu)
+  remove-structure-after: true
+
+# Miejsce, w ktorym budowany jest zamek
+location:
+  world: world
+  x: 0
+  y: 100
+  z: 0
+
+# Wymiary budowli
+structure:
+  # Szerokosc/dlugosc podstawy (najlepiej liczba nieparzysta)
+  size: 15
+  # Wysokosc scian
+  wall-height: 6
+  # Wysokosc wiez na rogach (liczona od podstawy)
+  tower-height: 9
+  # Rozmiar swietlika (kwadratowej dziury w dachu) - jak w oryginalnym eventie
+  skylight-size: 5
+  materials:
+    wall: SANDSTONE
+    wall-accent: CHISELED_SANDSTONE
+    floor: ORANGE_TERRACOTTA
+    window: GLASS_PANE
+    tower: SANDSTONE
+    tower-top: SMOOTH_SANDSTONE_SLAB
+
+rewards:
+  # Ile bonusowych punktow dostaje zabojca za zabicie kogos WEWNATRZ zamku,
+  # podczas trwania eventu
+  bonus-points-per-kill: 15
+  # Opcjonalnie: jesli masz juz wlasny system punktow/ekonomii, wpisz tutaj
+  # komende wykonywana z konsoli zamiast wbudowanego systemu punktow.
+  # Dostepne placeholdery: %player% %amount%
+  # Przyklad: "points add %player% %amount%"
+  external-points-command: ""
+
+messages:
+  prefix: "&6&lZAMEK Z PIASKU &8» "
+  announce-countdown: "&eZamek z piasku pojawi sie za &b%time%&es! Przygotuj sie do walki!"
+  start: "&aZamek zostal wybudowany! Walcz wewnatrz i zdobywaj bonusowe punkty przez &e%duration%s&a!"
+  time-left: "&ePozostalo &b%time%s&e do konca eventu!"
+  end: "&cEvent zakonczony! Dziekujemy za udzial."
+  kill-bonus: "&a+%amount% pkt &7(Zamek z Piasku)"
+  already-running: "&cEvent juz trwa!"
+  not-running: "&cEvent obecnie nie trwa."
+  started-by-admin: "&7Event zostal wymuszony przez administratora."
+  no-permission: "&cNie masz uprawnien do tej komendy."
+
+bossbar:
+  title: "&6&lZAMEK Z PIASKU &7» &fPozostalo: &e%time%s"
+  color: YELLOW
+  style: SEGMENTED_10
